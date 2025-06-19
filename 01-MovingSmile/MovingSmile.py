@@ -7,12 +7,29 @@ def main():
     pygame.display.set_caption("Moving Smile")
     screen = pygame.display.set_mode((640, 480))
 
+
+    eye_x = 0
+    eye_y = 0
+    clock = pygame.time.Clock()
+
     while True:
         # TODO 4: Set the clock speed to 60 fps
+        clock.tick(60)
+
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
             # TODO 3: Make the eye pupils move with Up, Down, Left, and Right keys
+            pressed_keys = pygame.key.get_pressed()
+            if pressed_keys[pygame.K_RIGHT]:
+                print("You pressed right")
+            if pressed_keys[pygame.K_LEFT]:
+                print("You pressed left")
+            if pressed_keys[pygame.K_UP]:
+                print("You pressed up")
+            if pressed_keys[pygame.K_DOWN]:
+                print("You pressed down")
 
         screen.fill((255, 255, 255))  # white
 
@@ -27,7 +44,7 @@ def main():
 
         pygame.draw.circle(screen, (225, 225, 225), (400, 160), 25)  # white eye
         pygame.draw.circle(screen, (0, 0, 0), (400, 160), 25, 3)  # black outline
-        pygame.draw.circle(screen, (0, 0, 0), (398, 162), 7)  # black pupil
+        pygame.draw.circle(screen, (0, 0, 0), (398, 160), 7)  # black pupil
 
         # TODO 1: Draw a nose
         # Suggestion: color (80,0,0) location (320,245), radius 10
