@@ -1,18 +1,42 @@
 import pygame
 import sys
 import random
-
+import time
 
 # You will implement this module ENTIRELY ON YOUR OWN!
 
 # TODO: Create a Ball class.
+class Ball:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.color
+        self.x = x
+        self.y = y
+        self.x_speed = random.randint(1, 5)
+        self.y_speed = random.randint(1, 5)
+
+    def color(self):
+        self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+
+    def move(self):
+        self.x += self.x_speed
+        self.y += self.y_speed
+
+    def collide(self):
+        caption = (screen.get_width() - caption1.get_width())
+
+
+
 # TODO: Possible member variables: screen, color, x, y, radius, speed_x, speed_y
+
+
 # TODO: Methods: __init__, draw, move
+
 
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((300, 300))
+    screen = pygame.display.set_mode((1000, 700))
     pygame.display.set_caption('Bouncing Ball')
     screen.fill(pygame.Color('gray'))
     clock = pygame.time.Clock()
